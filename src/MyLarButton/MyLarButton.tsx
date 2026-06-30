@@ -11,10 +11,14 @@ const MyLarButton: FC<MyButtonProps> = ({
 	big,
 	...props
 }: MyButtonProps) => {
+	const buttonClasses = ['my-button']
+	if (big) {
+		buttonClasses.push('big-btn')
+	}
 	return (
 		<button
 			style={{ color: color }}
-			className={big ? 'big my-button' : 'my-button'}
+			className={buttonClasses.join(' ')}
 			{...props}
 		>
 			{children}
