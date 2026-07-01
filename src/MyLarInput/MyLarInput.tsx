@@ -1,4 +1,5 @@
-import React, { type FC } from 'react'
+import { type FC } from 'react'
+import './MyLarInput.css'
 
 export interface MyLarInputProps {
 	big?: boolean
@@ -12,7 +13,21 @@ const MyLarInput: FC<MyLarInputProps> = ({
 	label,
 	...props
 }: MyLarInputProps) => {
-	return <input type='text' />
+	const classes = ['my-input']
+	if (big) {
+		classes.push('my-big-input')
+	}
+	return (
+		<label>
+			{label ? label : ''}
+			<input
+				type='text'
+				{...props}
+				placeholder={placeholder ? placeholder : ''}
+				className={classes.join(' ')}
+			/>
+		</label>
+	)
 }
 
 export default MyLarInput

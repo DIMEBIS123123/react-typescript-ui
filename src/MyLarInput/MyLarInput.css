@@ -1,0 +1,8 @@
+.my-input {
+	border: 2px solid palevioletred;
+	padding: 5 10px;
+}
+.my-big-input {
+	width: 300px;
+	font-size: 34px;
+}
